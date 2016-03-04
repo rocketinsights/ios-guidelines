@@ -13,8 +13,7 @@ _This document captures standard / best practices for any iOS app that is develo
 1. [Coding Style](#coding-style)
 1. [Security](#security)
 1. [Analytics](#analytics)
-1. [Building](#building)
-1. [Deployment](#deployment)
+1. [What else?] (#what-else)
 
 ## Getting Started
 
@@ -185,7 +184,7 @@ This has the advantage of allowing you to swap out the entire Analytics framewor
 
 Include Fabric as part of every project so you can track crash rates. These should be .5% or less. 
 
-## To do
+## What else
 
 - Certificate management -- developer, match?
 - Add section on Testing
