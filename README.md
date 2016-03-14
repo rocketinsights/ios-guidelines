@@ -163,6 +163,7 @@ If your app needs to store sensitive data, such as a username and password, an a
 Keep any HTTP traffic to remote servers encrypted with TLS at all times. To avoid man-in-the-middle attacks that intercept your encrypted traffic, you can set up certificate pinning.. Popular networking libraries such as AFNetworking and Alamofire support this out of the box.
 
 The general approach for the networking layer is to do the following:
+
 1. Have an XXXSessionManager class that subclasses URLSessionManager/AFHTTPSessionManager. This can perform all required configuration of the session manager including headers, logging etc. This has class methods to return a sessionManager per host.
 2. Have an APIClient class that exposes POST/GET/DELETE/PUT methods. The APIClient caches the XXXSessionManager in a static instance. The POST/GET/DELETE/PUT methods take path, parameters and request completion handler that has statusCode, responseObject and the task itself. The calling of the completion handler is wrapped by another closure. This closure can perform common functions like logging user out, re-enqueueing failed tasks, updating user profile etc. 
 3. APIClient+XXX provides specific API calls. E.g., APIClient+User will have loginUser() etc.
