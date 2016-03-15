@@ -44,6 +44,11 @@ The reason we use Carthage is because its a simpler model then CocoaPods and thu
 
 A reason *not* to use Carthage is if there is a key library that you need to access and it is not available via Carthage.
 
+When updating carthage libs you should usually use a command of the form:
+`carthage update --platform iOS --no-use-binaries`
+
+This will speed up the build (only build framework for iOS) and forces ut to compile from source which helps when we need to switch between versions of Xcode.
+
 ### Project Structure
 
 Organize your files at both the Group layer in Xcode and also on the filesystem. The structure for files should be
@@ -94,7 +99,7 @@ All feature work should be done on a topic branch. A pull request can then be ma
 ## Common Libraries
 
 Generally speaking, make it a conscious decision to add an external dependency to your project. Here are some common libraries we use
-* **AFNetworking**: Networking
+* **AlamoFire**: Networking
 * **SwiftyJSON**: JSON parsing / management
 * **FLAnimatedImage**: If you don't have animated images in your app you are doing it wrong.
 * **DateTools**: Who doesn't love date management?
