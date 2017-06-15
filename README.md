@@ -186,11 +186,15 @@ All warnings should fail the build (set them as errors). The linter should be ru
 
 ## Analytics
 
-Including some analytics framework in your app is strongly recommended, as it allows you to gain insights on how people actually use it. We recommend MixPanel (super awesome!) or Google Analytics (free!). 
+Including some analytics framework in your app is strongly recommended, as it allows you to gain insights on how people actually use it. We recommend MixPanel (super awesome!) or Google Firebase (free!). 
 
-A good practice is to create a slim helper class, e.g. `AnalyticsHelper`, that handles the the firing of screen views / events.
+A good practice is to create a slim helper class, e.g. `AnalyticsServices`, that handles the the firing of screen views / events.
 
 This has the advantage of allowing you to swap out the entire Analytics framework behind the scenes if needed, without the rest of the app noticing. Also, you can layer in additional analytic endpoints as needed. E.g., tracking screen views in Fabric.
+
+If using Firebase these best practices are recommended:
+* Keep all events as flat as possible. This means the _name_ of the event should contain as much data as possible. Parameter should not be used heavily. This is because funnels in Firebase can not support parameters.
+* Logically grouped events should have the same prefix. Specific to all screen views we should track the events as screen_xxx. E.g., screen_home, screen_register
 
 ### Crash Logs
 
