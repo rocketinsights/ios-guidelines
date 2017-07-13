@@ -38,16 +38,9 @@ Use the [GitHub Swift](https://github.com/github/gitignore/blob/master/Swift.git
 
 ### Dependency Management
 
-The swift package manager will ultimately be the way to distribute libraries. Until then use [Carthage](https://github.com/Carthage/Carthage) unless there is a compelling reason not to. 
+The swift package manager will ultimately be the way to distribute libraries. Until then use [Cocoapods](https://cocoapods.org) unless there is a compelling reason not to. 
 
-The reason we use Carthage is because its a simpler model then CocoaPods and thus less likely to break with each Xcode iteration.
-
-A reason *not* to use Carthage is if there is a key library that you need to access and it is not available via Carthage.
-
-When updating carthage libs you should usually use a command of the form:
-`carthage update --platform iOS --no-use-binaries`
-
-This will speed up the build (only build framework for iOS) and forces ut to compile from source which helps when we need to switch between versions of Xcode.
+We used to use Carthage which had a simpler model - but found too many libraries did not support Carthage. Also, Cocoapods is more familiar to more iOS devs.
 
 ### Project Structure
 
