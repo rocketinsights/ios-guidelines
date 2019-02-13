@@ -108,7 +108,11 @@ Our apps tend to use the  [Model-View-Controller-Store (MVCS)](http://programmer
 
 ### Models
 
-Keep your models immutable, and use them to translate the remote API's JSON into the object's properties. Use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse the JSON returned by the API.
+Keep your models immutable, and use them to translate the remote API's JSON into the object's properties.  
+
+Older projects use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to parse the JSON returned by the API.
+
+Current projects should leverage [JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization) and [JSONDecoder](https://developer.apple.com/documentation/foundation/jsondecoder).
 
 Make your models be _structs_.
 
