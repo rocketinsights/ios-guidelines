@@ -58,6 +58,41 @@ Organize your files at both the Group layer in Xcode and also on the filesystem.
 
 First, create them as groups (little yellow "folders") within the group with your project's name in Xcode's Project Navigator. Then, for each of the groups, link them to an actual directory in your project path by opening their File Inspector on the right, hitting the little gray folder icon, and creating a new subfolder with the name of the group in your project directory.
 
+For larger projects, module grouping may make sense, follow the same structure per module
+
+    ├─ Authentication
+        ├─ Models
+        ├─ Views
+        ├─ Controllers
+        ├─ Services
+        ├─ Helpers
+        ├─ Storyboards
+    ├─ Onboarding
+        ├─ Models
+        ├─ Views
+        ├─ Controllers
+        ├─ Services
+        ├─ Helpers
+        ├─ Storyboards 
+    ├─ NewsFeed
+        ├─ Models
+        ├─ Views
+        ├─ Controllers
+        ├─ Services
+        ├─ Helpers
+        ├─ Storyboards 
+    ├─ Shared
+        ├─ Models
+        ├─ Views
+        ├─ Controllers
+        ├─ Services
+        ├─ Helpers
+        ├─ Storyboards 
+    ├─ Supporting Files
+        ├─ Bridging Header
+        ├─ .plist
+
+
 #### Localization
 
 Keep all user strings in localization files right from the beginning. This is good not only for translations, but also for finding user-facing text quickly. You can add a launch argument to your build scheme to launch the app in a certain language, e.g.
